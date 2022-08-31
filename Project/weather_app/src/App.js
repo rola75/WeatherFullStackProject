@@ -1,5 +1,6 @@
 import './App.css';
 import { Heading } from './component/Heading/Heading';
+import { NavBar } from './component/NavBar/NavBar';
 import { useEffect, useState } from 'react';
 
 const App = () => {
@@ -32,7 +33,7 @@ const App = () => {
         <Heading />
      </header>
      <nav>
-      <p>Search Bar goes here</p>
+      <NavBar />
      </nav>
      <main>
 
