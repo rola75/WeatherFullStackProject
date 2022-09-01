@@ -5,15 +5,15 @@ import { useEffect, useState } from 'react';
 
 const App = () => {
   const [weather, setWeather] = useState();
+  const [ weatherHistory, setWeatherHistory ] = useState();
 
   const apiKey = '737d76764aadcf0f2bb5a71eb378395c';
   const cityName = 'Austin';
-  const stateName = 'Texas';
-  const countryCode = 'US';
+
   
   useEffect(() => {
     const fetchWeather = async () => {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateName},${countryCode}&appid=${apiKey}`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`);
       const data = response.json();
       setWeather(data)
     }
