@@ -14,17 +14,12 @@ const App = () => {
   useEffect(() => {
     const fetchWeather = async () => {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`);
-      const data = response.json();
-      setWeather(data)
+      const data = await response.json();
+      setWeather(data.name)
     }
     fetchWeather();
   }, []);
 
-
-
-
-  
-  
   
   return (
     <div className="App">
@@ -36,7 +31,7 @@ const App = () => {
       <NavBar />
      </nav>
      <main>
-
+        <p>{weather}</p>
      </main>
 
     </div>
