@@ -26,7 +26,3 @@ app.use("/city", router);
 app.listen(port, (req, res)=>{
     console.log(`server is working ${port}`)
 })
-
-// app.post('/city', (req, res)=>{
-//     console.log(req)
-// })

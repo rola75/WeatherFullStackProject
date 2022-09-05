@@ -22,4 +22,4 @@ export const City = sequelize.define("Cities", {
         type: Sequelize.STRING,
         allowNUll: false,
     },
-})
+}, {timestamps: false})

@@ -11,7 +11,10 @@ export const getCity = (req, res) => {
   };
 
 export const addCity = (req, res) => {
-    City.create({ name: req.body.name})
+    console.log(req);
+    //const {id, name, temp, description} = req.body;
+    City.create(req.body)
+    // City.create({id, name, temp, description})
       .then(() => {
         res.status(201).send({ message: "Created" });
       })
