@@ -12,6 +12,11 @@ export const City = sequelize.define("Cities", {
         type: Sequelize.STRING,
         allowNUll: false,
     },
+
+    img: {
+        type: Sequelize.STRING,
+        allowNUll: false,
+    },
     
     temp: {
         type: Sequelize.INTEGER,
