@@ -2,10 +2,11 @@ import './App.css';
 import { Heading } from './component/Heading/Heading';
 import { NavBar } from './component/NavBar/NavBar';
 import { useEffect, useState } from 'react';
+import { WeatherCardContainer } from './component/WeatherCard/WeatherCardContainer/WeatherCardContainer';
 
 const App = () => {
   const [weather, setWeather] = useState();
-  const [weatherHistory, setWeatherHistory] = useState();
+  //const [weatherHistory, setWeatherHistory] = useState();
 
   const apiKey = '737d76764aadcf0f2bb5a71eb378395c';
   const cityName = 'Austin';
@@ -13,15 +14,10 @@ const App = () => {
   
   useEffect(() => {
     const fetchWeather = async () => {
-      const [weatherResponse, historyWeatherResponse] = await Promise.all([
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${},${},${}&appid=${}`),
-        fetch(`http://localhost:3010/city`)
-      ]);
+      //const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${},${},${}&appid=${}`)
+      const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
       const weatherCurrentData = await weatherResponse.json();
-      const weatherHistoryData = await historyWeatherResponse.json();
-
       setWeather(weatherCurrentData);
-      setWeatherHistory(weatherHistoryData);
     }
     fetchWeather();
   }, []);
@@ -37,7 +33,7 @@ const App = () => {
       <NavBar />
      </nav>
      <main>
-        <p>{weather}</p>
+        {weather && <WeatherCardContainer weatherData={weather}/>}
      </main>
 
     </div>
