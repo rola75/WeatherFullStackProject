@@ -5,10 +5,12 @@
 }
 
 .App {
-  width: 375px;
-  height: 670px;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color:whitesmoke;
-  border-radius: 10px;
 }
 
 .header {

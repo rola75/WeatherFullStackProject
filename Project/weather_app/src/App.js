@@ -1,8 +1,8 @@
 import './App.css';
-import { Heading } from './component/Heading/Heading';
-import { NavBar } from './component/NavBar/NavBar';
+import { Heading } from './component/Heading/Heading.jsx';
+import { NavBar } from './component/NavBar/NavBar.jsx';
 import { useEffect, useState } from 'react';
-import { WeatherCardContainer } from './component/WeatherCard/WeatherCardContainer/WeatherCardContainer';
+import { WeatherCardContainer } from './component/WeatherCard/WeatherCardContainer/WeatherCardContainer.jsx';
 
 const App = () => {
   const [weather, setWeather] = useState();
@@ -33,7 +33,7 @@ const App = () => {
       <NavBar />
      </nav>
      <main>
-        {weather && <WeatherCardContainer weatherData={weather}/>}
+        {weather ? <WeatherCardContainer weatherData={weather}/> : <p>Weather display</p>}
      </main>
 
     </div>
