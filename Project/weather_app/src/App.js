@@ -8,7 +8,7 @@ const App = () => {
   const [weather, setWeather] = useState();
   //const [weatherHistory, setWeatherHistory] = useState();
 
-  const apiKey = '737d76764aadcf0f2bb5a71eb378395c';
+  const apiKey = '';
   const cityName = 'Austin';
 
   
