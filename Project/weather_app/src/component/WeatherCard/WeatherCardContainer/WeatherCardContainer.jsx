@@ -9,7 +9,7 @@ export const WeatherCardContainer = (props) => {
     const {temp, feels_like} = main;
  
     return(
-        <section>
+        <section className="card_border">
             <WeatherCardDisplay key={id} name={name} image={icon} description={description} temp={temp} temp_like={feels_like}/>
         </section>
     )

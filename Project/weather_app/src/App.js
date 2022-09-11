@@ -4,36 +4,23 @@ import { NavBar } from './component/NavBar/NavBar.jsx';
 import { useEffect, useState } from 'react';
 import { WeatherCardContainer } from './component/WeatherCard/WeatherCardContainer/WeatherCardContainer.jsx';
 
+
 const App = () => {
   const [weather, setWeather] = useState();
-  //const [weatherHistory, setWeatherHistory] = useState();
+  const [weatherHistory, setWeatherHistory] = useState();
 
-  const apiKey = '737d76764aadcf0f2bb5a71eb378395c';
-  const cityName = 'Austin';
-
-  
-  useEffect(() => {
-    const fetchWeather = async () => {
-      //const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${},${},${}&appid=${}`)
-      const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
-      const weatherCurrentData = await weatherResponse.json();
-      setWeather(weatherCurrentData);
-    }
-    fetchWeather();
-  }, []);
-
-  
   return (
     <div className="App">
      
      <header className='header'>
         <Heading />
      </header>
-     <nav>
-      <NavBar />
+     <nav className='nav'>
+      <NavBar setWeather={setWeather} setWeatherHistory={setWeatherHistory}/>
      </nav>
-     <main>
-        {weather ? <WeatherCardContainer weatherData={weather}/> : <p>Weather display</p>}
+     <main className='main'>
+        {weather ? <WeatherCardContainer weatherData={weather}/> : <h1>Weather will display here.</h1>}
+        {weatherHistory ? <WeatherCardContainer weatherData={weatherHistory}/> : <h1>Weather history will display here.</h1>}
      </main>
 
     </div>
