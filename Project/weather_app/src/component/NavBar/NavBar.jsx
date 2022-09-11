@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 
 export const NavBar = (props) => {
     const [message, setMessage] = useState("");
-    const {setWeather, setWeatherHistory} = props
+    const {setWeather, setWeatherHistory} = useState("");
     const [cityName, setCityName] = useState("");
     const apiKey = process.env.API_KEY || "516ecd691828eb92d3c409a58ec5dcff";
     
