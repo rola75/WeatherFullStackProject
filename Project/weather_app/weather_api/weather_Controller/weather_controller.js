@@ -8,15 +8,15 @@ export const getCity = (req, res) => {
     .catch(err => {
       console.log(err)
     })
-  };
+};
 
 export const addCity = (req, res) => {
-    const {id, name, img, temp, description} = req.body;
-    City.create({id, name, img, temp, description})
-      .then(() => {
-        res.status(201).send({ message: "Created" });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+    console.log(req);
+     City.create(req.body)
+    .then(() => {
+      res.status(201).send({ message: "Created" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

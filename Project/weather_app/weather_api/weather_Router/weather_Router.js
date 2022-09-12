@@ -6,4 +6,5 @@ const router = Router();
 router.get('/', getCity);
 router.post('/', addCity);
 
+
 export default router;

@@ -1,10 +1,10 @@
-import './WeatherCardDisplay.scss';
+import './WeatherHistoryDisplay.scss';
 
-export const WeatherCardDisplay = (props) => {
+export const WeatherHistoryDisplay = (props) => {
     const {name, image, description, temp, temp_like} = props;
     
     return(
-        <div className='card'>
+        <div className='history_card'>
             <header>
                 <h1>{name}</h1>
             </header>

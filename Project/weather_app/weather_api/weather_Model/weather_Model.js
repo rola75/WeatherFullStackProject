@@ -13,18 +13,24 @@ export const City = sequelize.define("Cities", {
         allowNUll: false,
     },
 
-    img: {
+    icon: {
         type: Sequelize.STRING,
         allowNUll: false,
     },
     
+    description: {
+        type: Sequelize.STRING,
+        allowNUll: false,
+    },
+
     temp: {
         type: Sequelize.INTEGER,
         allowNUll: false,
     },
 
-    description: {
-        type: Sequelize.STRING,
+    feels_like: {
+        type: Sequelize.INTEGER,
         allowNUll: false,
     },
-}, {timestamps: false})
+}, {timestamps:false});
+    
